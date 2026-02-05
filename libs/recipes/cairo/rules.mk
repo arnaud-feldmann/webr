@@ -16,7 +16,7 @@ $(CAIRO_WASM_LIB): $(CAIRO_TARBALL) $(PIXMAN_WASM_LIB) $(FC_DEPS)
 	cp -r "$(WEBR_ROOT)/patches/cairo-$(CAIRO_VERSION)/." \
 	  "$(BUILD)/cairo-$(CAIRO_VERSION)/patches"
 	cd $(BUILD)/cairo-$(CAIRO_VERSION)/build && quilt push -a && \
-	  CFLAGS="$(CFLAGS) -DCAIRO_NO_MUTEX=1 -Wno-implicit-enum-enum-cast -Wno-error" \
+	  CFLAGS="$(CFLAGS) -DCAIRO_NO_MUTEX=1 -Wno-implicit-enum-enum-cast -Wno-error -Wno-error=incompatible-pointer-types -Wno-incompatible-pointer-types" \
 	  LDFLAGS="$(LDFLAGS) --use-port=freetype -sUSE_PTHREADS=0" \
 	  emconfigure ../configure \
 	    ax_cv_c_float_words_bigendian=no \

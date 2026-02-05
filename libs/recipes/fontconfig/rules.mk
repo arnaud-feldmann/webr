@@ -7,7 +7,7 @@ fontconfig: $(FC_DEPS)
 
 $(FC_TARBALL):
 	mkdir -p $(DOWNLOAD)
-	wget -q -O $@ $(FC_URL)
+	wget -q --tries=10 --waitretry=2 -O $@ $(FC_URL)
 
 $(FC_DEPS): $(FC_TARBALL) $(LIBXML2_WASM_LIB) $(EM_PKG_CONFIG_PATH)/freetype2.pc
 	rm -rf $(BUILD)/fontconfig-$(FC_VERSION)
