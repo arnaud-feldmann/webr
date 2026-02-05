@@ -25,5 +25,6 @@ $(LIBGIT2_WASM_LIB): $(LIBGIT2_TARBALL)
 	    -DBUILD_TESTS=OFF \
 	    -DBUILD_CLI=OFF \
 		-DCMAKE_C_FLAGS="-Wno-error=incompatible-pointer-types -Wno-incompatible-pointer-types" \
+		-DENABLE_WERROR=OFF \
 	    .. && \
 	  emmake make install
