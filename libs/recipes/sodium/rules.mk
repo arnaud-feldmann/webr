@@ -1,6 +1,6 @@
 LIBSODIUM_VERSION = 1.0.18
 LIBSODIUM_TARBALL = $(DOWNLOAD)/libsodium-$(LIBSODIUM_VERSION).tar.gz
-LIBSODIUM_URL = https://download.libsodium.org/libsodium/releases/libsodium-${LIBSODIUM_VERSION}.tar.gz
+LIBSODIUM_URL = https://github.com/jedisct1/libsodium/releases/download/${-LIBSODIUM_VERSION}-RELEASE/libsodium-${LIBSODIUM_VERSION}.tar.gz
 
 .PHONY: libsodium
 libsodium: $(LIBSODIUM_WASM_LIB)
