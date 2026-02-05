@@ -79,7 +79,7 @@ RUN /opt/R/current/bin/R -q -e 'pak::pak("r-wasm/rwasm", lib = .Library)'
 RUN echo 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))' >> /root/.Rprofile
 
 # Download webR and configure for LLVM flang
-ARG WEBRCI_REPO="https://github.com/r-wasm/webr.git"
+ARG WEBRCI_REPO="https://github.com/arnaud-feldmann/webr.git"
 RUN git clone ${WEBRCI_REPO} /opt/webr
 WORKDIR /opt/webr
 ARG WEBRCI_SHA=HEAD
