@@ -1,13 +1,12 @@
 LIBARCHIVE_VERSION = 3.7.2
 LIBARCHIVE_TARBALL = $(DOWNLOAD)/libarchive-$(LIBARCHIVE_VERSION).tar.gz
-LIBARCHIVE_URL = https://www.libarchive.org/downloads/libarchive-$(LIBARCHIVE_VERSION).tar.xz
 
 .PHONY: libarchive
 libarchive: $(LIBARCHIVE_WASM_LIB)
 
 $(LIBARCHIVE_TARBALL):
 	mkdir -p $(DOWNLOAD)
-	wget $(LIBARCHIVE_URL) -O $@
+	wget https://www.libarchive.org/downloads/libarchive-$(LIBARCHIVE_VERSION).tar.gz -O $@
 
 $(LIBARCHIVE_WASM_LIB): $(LIBARCHIVE_TARBALL) $(XZ_WASM_LIB) $(ZSTD_WASM_LIB) $(LZ4_WASM_LIB) $(EXPAT_WASM_LIB)
 	mkdir -p $(BUILD)/libarchive-$(LIBARCHIVE_VERSION)/build
