@@ -1,6 +1,6 @@
 LIBARCHIVE_VERSION = 3.7.2
 LIBARCHIVE_TARBALL = $(DOWNLOAD)/libarchive-$(LIBARCHIVE_VERSION).tar.gz
-LIBARCHIVE_URL = https://www.libarchive.org/downloads/libarchive-$(LIBARCHIVE_VERSION).tar.xz
+LIBARCHIVE_URL = /https://github.com/libarchive/libarchive/releases/download/$(LIBARCHIVE_VERSION)/libarchive-$(LIBARCHIVE_VERSION).tar.xz
 
 .PHONY: libarchive
 libarchive: $(LIBARCHIVE_WASM_LIB)
